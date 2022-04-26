@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  border-radius: 3px;
+  width: 90%;
+}
+
+.box {
+  border: 2px dotted blue;
+  border-radius: 3px;
+}
+
+.inner-box {
+  border: 2px dotted green;
+  height: 30px;
+}
+
+.second-inner-box {
+  border: 2px dotted red;
+}
+
+/* Header section  */
+header {
+  grid-area: header;
+
+  display: grid;
+  grid-template-columns: 50px 150px 1fr auto;
+}
+
+.menu-bar {
+  display: grid;
+  place-items: center;
+  width: 80%;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+}
+
+.search-bar {
+  padding: 3px 5px;
+  display: grid;
+}
+
+.search {
+  border: 2px solid;
+  max-width: 500px;
+}
+
+.tool-bar {
+  padding: 5px;
+  display: grid;
+  gap: 5px;
+  grid-auto-flow: column;
+}
+
+.tool-bar .tool-item {
+  width: 40px;
+  height: 40px;
+}
+
+.tool-item.long {
+  width: 80px;
+}
+
+/* Left Menu */
+.left-menu {
+  grid-area: left-menu;
+}
+
+.menu-item {
+  margin: 5px 0;
+  height: fit-content;
+  padding: 2px;
+  display: grid;
+  gap: 3px;
+}
+
+.chat .inner-box {
+  padding: 2px;
+
+  display: grid;
+  gap: 2px;
+  grid-template-columns: 23px 1fr;
+}
+
+.left-menu .inner-box .circle {
+  border-radius: 50%;
+}
+
+.left-menu .chat {
+  display: grid;
+  grid-template-rows: 1fr 25px;
+}
+
+/* Mail Section */
+.mail {
+  grid-area: mail;
+
+  padding: 3px;
+  height: fit-content;
+
+  display: grid;
+  gap: 3px;
+  grid-template-rows: (auto-fit, auto);
+}
+
+/* Right Menu */
+.right-menu {
+  grid-area: right-menu;
+
+  display: grid;
+  gap: 5px;
+  grid-template-columns: auto 40px;
+}
+
+.right-bar {
+    padding: 2px;
+}
+
+.right-bar .inner-box {
+    margin: 2px 0;
+}
+
+.container {
+  padding: 10px;
+
+  display: grid;
+  height: 100vh;
+
+  grid-template:
+    "header header header" 50px
+    "left-menu mail right-menu" 1fr /
+    200px 1fr 230px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template:
+      "header header" 50px
+      "left-menu mail" 1fr /
+      200px 1fr;
+  }
+
+  .right-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    grid-template:
+      "header header" 50px
+      "left-menu mail" 1fr /
+      120px 1fr;
+  }
+}
