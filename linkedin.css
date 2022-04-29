@@ -14,7 +14,7 @@
   border: 2px dotted green;
 }
 
-.container {
+.main-container {
   border: none;
   display: grid;
   justify-content: center;
@@ -85,32 +85,8 @@ nav.box {
 
   display: grid;
   gap: 5px;
+
   grid-auto-rows: auto;
-  /* grid-template-rows: repeat(auto-fit, 50px); */
-}
-
-.left1 {
-  grid-area: left1;
-}
-
-.left2 {
-  grid-area: left2;
-}
-
-.left3 {
-  grid-area: left3;
-}
-
-.right1 {
-  grid-area: right1;
-}
-
-.right2 {
-  grid-area: right2;
-}
-
-.right3 {
-  grid-area: right3;
 }
 
 .start-post {
@@ -147,6 +123,8 @@ nav.box {
 }
 
 .post-section {
+  margin-top: 10px;
+  
   grid-area: post-section;
   padding: 5px;
 
@@ -164,14 +142,14 @@ main {
   padding: 10px;
 
   display: grid;
-  grid-template:
-    "left1 start-post right1"
-    "left1 post-section right1"
-    "left2 post-section right2"
-    "left3 post-section right3"
-    ". post-section ." 1fr /
-    150px 400px 150px;
+  grid-template-columns: 150px 400px 150px;
   gap: 10px;
+}
+
+.menu-section {
+  display: grid;
+  row-gap: 10px;
+  grid-template-rows: auto auto auto 1fr;
 }
 
 @media screen and (max-width: 1025px) {
